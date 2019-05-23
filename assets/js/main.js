@@ -76,7 +76,6 @@ var string = 'What is the length of the string?';
 console.log(string.toLowerCase());
 
 
-
 //16
 
 var s = '';
@@ -85,7 +84,6 @@ if (s) {
 } else {
     console.log('string is empty');
 };
-
 
 var browser = Object.create(null);
 browser.name = 'chrome';
@@ -143,3 +141,11 @@ while (i <= 7) {
     console.log(i++);
 };
 
+function myFunction(arg1, arg2, callback) {
+    console.log("Число arg1 в степени arg2:");
+    var myNumber = Math.pow(arg1, arg2);
+    callback(myNumber);
+};
+myFunction(2, 4, function (res) {
+    console.log("Результат: " + res);
+});
