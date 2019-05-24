@@ -184,48 +184,6 @@ myFunction(5, 3, function (res) {
 });
 
 
-// let pow = (x, n) => n !== 1 ? x *= pow(x, n - 1) : x;
-// let someFunc = (x, y, callback) => callback(pow(x, y));
-// someFunc(3, 2, (result) => console.log(`Результат возведения в степень: ${result}`));
-
-
-// let Person = {
-//     constructor: function (name, age, gender) {
-//         this.name = name;
-//         this.age = age + 'years';
-//         this.gender = gender;
-//         return this;
-//     },
-//     greet: function () {
-//         console.log(`Hi, my name is ${this.name}`);
-//     }
-// };
-// let john = Object.create(Person).constructor('John', 20, 'male');
-// let bob = Object.create(Person).constructor('Bob', 21, 'male');
-// let mary = Object.create(Person).constructor('Mary', 22, 'female');
-
-// console.log(john.greet());
-// console.log(bob.greet());
-// console.log(mary.greet());
-
-
-
-// let WebDeveloper = Object.create(Person);
-// WebDeveloper.constructor = function (name, gender, age, skills) {
-//     Person.constructor.apply(this, arguments);
-//     this.skills = skills || [];
-
-//     return this;
-// };
-// let artem = Object.create(WebDeveloper).constructor('Artem', 23, 'male', ['html', 'css', 'js']);
-// console.log(artem);
-// console.log(artem.name);
-// console.log(artem.age);
-// console.log(artem.gender);
-// console.log(artem.skills);
-
-
-
 var look = function () {
     return 'Look! It is a ' + this.name + '!';
 }
@@ -257,3 +215,5 @@ var car = {
     }
 };
 console.log(car.color);
+
+
