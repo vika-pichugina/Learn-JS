@@ -76,7 +76,6 @@ var string = 'What is the length of the string?';
 console.log(string.toLowerCase());
 
 
-
 //16
 
 var s = '';
@@ -85,7 +84,6 @@ if (s) {
 } else {
     console.log('string is empty');
 };
-
 
 var browser = Object.create(null);
 browser.name = 'chrome';
@@ -143,3 +141,119 @@ while (i <= 7) {
     console.log(i++);
 };
 
+function myFunction(arg1, arg2, callback) {
+    console.log("Число arg1 в степени arg2:");
+    var myNumber = Math.pow(arg1, arg2);
+    callback(myNumber);
+};
+myFunction(2, 4, function (res) {
+    console.log("Результат: " + res);
+});
+
+
+//17
+
+
+var counter = (function () {
+    var count = 2;
+    return function (num) {
+        count = num !== undefined ? num : count;
+        return count++;
+    }
+}());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter(20));
+console.log(counter());
+console.log(counter());
+
+
+function myFunction(x, y, callback) {
+    var i = function (x, n) {
+        if (n !== 1) {
+            return x *= i(x, n - 1);
+        } else {
+            return x;
+        }
+    };
+    callback(i(x, y));
+}
+myFunction(5, 3, function (res) {
+    console.log('Результат: ' + res);
+});
+
+
+// let pow = (x, n) => n !== 1 ? x *= pow(x, n - 1) : x;
+// let someFunc = (x, y, callback) => callback(pow(x, y));
+// someFunc(3, 2, (result) => console.log(`Результат возведения в степень: ${result}`));
+
+
+// let Person = {
+//     constructor: function (name, age, gender) {
+//         this.name = name;
+//         this.age = age + 'years';
+//         this.gender = gender;
+//         return this;
+//     },
+//     greet: function () {
+//         console.log(`Hi, my name is ${this.name}`);
+//     }
+// };
+// let john = Object.create(Person).constructor('John', 20, 'male');
+// let bob = Object.create(Person).constructor('Bob', 21, 'male');
+// let mary = Object.create(Person).constructor('Mary', 22, 'female');
+
+// console.log(john.greet());
+// console.log(bob.greet());
+// console.log(mary.greet());
+
+
+
+// let WebDeveloper = Object.create(Person);
+// WebDeveloper.constructor = function (name, gender, age, skills) {
+//     Person.constructor.apply(this, arguments);
+//     this.skills = skills || [];
+
+//     return this;
+// };
+// let artem = Object.create(WebDeveloper).constructor('Artem', 23, 'male', ['html', 'css', 'js']);
+// console.log(artem);
+// console.log(artem.name);
+// console.log(artem.age);
+// console.log(artem.gender);
+// console.log(artem.skills);
+
+
+
+var look = function () {
+    return 'Look! It is a ' + this.name + '!';
+}
+var pet1 = {
+    name: 'dog',
+    look: look
+}
+var pet2 = {
+    name: 'cat',
+    look: look
+}
+var pet3 = {
+    name: 'rabbit',
+    look: look
+}
+console.log(pet1.look());
+console.log(pet2.look());
+console.log(pet3.look());
+
+
+var car = {
+    name: 'BMW',
+    _color: 'red',
+    get color() {
+        return this._color;
+    },
+    set color(value) {
+        this._color = value;
+    }
+};
+console.log(car.color);
